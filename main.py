@@ -20,7 +20,10 @@ def iter_directory(dirname):
     for root, dirs, files in dir_find:
 
         if files:
-            print(f'found a pdf file : {files[0]}')
+            if files[0].endswith('.pdf'):
+                print(f'found a pdf file : {files[0]}')
+            else:
+                print(f'no files pdf files found in directory : {dirname}')
         else:
             continue
 
